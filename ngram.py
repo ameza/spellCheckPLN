@@ -35,11 +35,11 @@ Usage:
         """Method to create Unigram Model for words loaded from corpus."""
         print("Creating Unigram Model")
         unigram = dict()
-        #unigramfile = open('unigram.data', 'w')
+        unigramfile = open('unigram.data', 'w')
         print("Calculating Count for Unigram Model")
         unigram = Counter(words)
-        #unigramfile.write(str(unigram))
-        #unigramfile.close()
+        unigramfile.write(str(unigram))
+        unigramfile.close()
         return unigram
 
     def createBigram(self, words):
@@ -52,10 +52,10 @@ Usage:
             biwords.append(item+' '+words[index+1])
         print("Calculating Count for Bigram Model")
         bigram = dict()
-        #bigramfile = open('bigram.data', 'w')
+        bigramfile = open('bigram.data', 'w')
         bigram = Counter(biwords)
-        #bigramfile.write(str(bigram))
-        #bigramfile.close()
+        bigramfile.write(str(bigram))
+        bigramfile.close()
         return bigram
 
     def createTrigram(self, words):
@@ -68,10 +68,10 @@ Usage:
             triwords.append(item+' '+words[index+1]+' '+words[index+2])
         print("Calculating Count for Trigram Model")
         trigram = dict()
-        #trigramfile = open('trigram.data', 'w')
+        trigramfile = open('trigram.data', 'w')
         trigram = Counter(triwords)
-        #trigramfile.write(str(trigram))
-        #trigramfile.close()
+        trigramfile.write(str(trigram))
+        trigramfile.close()
         return trigram
 
     def createQuadrigram(self, words):
@@ -84,10 +84,10 @@ Usage:
             quadriwords.append(item+' '+words[index+1]+' '+words[index+2]+' '+words[index+3])
         print("Calculating Count for Quadrigram Model")
         quadrigram = dict()
-        #quadrigramfile = open('fourgram.data', 'w')
+        quadrigramfile = open('fourgram.data', 'w')
         quadrigram = Counter(fourwords)
-        #quadrigramfile.write(str(fourgram))
-        #quadrigramfile.close()
+        quadrigramfile.write(str(fourgram))
+        quadrigramfile.close()
         return quadrigram
 
         
@@ -101,10 +101,10 @@ Usage:
             pentiwords.append(item+' '+words[index+1]+' '+words[index+2]+' '+words[index+3]+' '+words[index+4])
         print("Calculating Count for pentigram Model")
         pentigram = dict()
-        #pentigramfile = open('pentagram.data', 'w')
+        pentigramfile = open('pentagram.data', 'w')
         pentigram = Counter(pentiwords)
-        #pentigramfile.write(str(pentagram))
-        #pentigramfile.close()
+        pentigramfile.write(str(pentigram))
+        pentigramfile.close()
         return pentigram
 
     def probability(self, word, words = "", gram = 'uni'):
