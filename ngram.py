@@ -30,7 +30,7 @@ Usage:
         print 'Processing Corpus'
         words = corpus.split(' ')
         return words
-    
+
     def createUnigram(self, words):
         """Method to create Unigram Model for words loaded from corpus."""
         print("Creating Unigram Model")
@@ -38,7 +38,7 @@ Usage:
         unigramfile = open('unigram.data', 'w')
         print("Calculating Count for Unigram Model")
         unigram = Counter(words)
-        unigramfile.write(str(unigram))
+        unigramfile.write(str(unigram).decode('string_escape'))
         unigramfile.close()
         return unigram
 
@@ -54,7 +54,7 @@ Usage:
         bigram = dict()
         bigramfile = open('bigram.data', 'w')
         bigram = Counter(biwords)
-        bigramfile.write(str(bigram))
+        bigramfile.write(str(bigram).decode('string_escape'))
         bigramfile.close()
         return bigram
 
@@ -90,7 +90,7 @@ Usage:
         quadrigramfile.close()
         return quadrigram
 
-        
+
     def createPentigram(self, words):
         """Method to create Pentigram Model for words loaded from corpus."""
         print("Creating pentigram Model")
